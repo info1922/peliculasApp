@@ -15,12 +15,31 @@ export class PeliculasService {
     // path de las imagenes
     img = `image.tmdb.org/t/p/w300`;
 
+    getCartelera() {
+        const desde =  new Date();
+        const hasta = new Date();
+        hasta.setDate( hasta.getDate() + 7);
+
+        // tslint:disable-next-line:prefer-const
+        let Desdestr = `${desde.getFullYear()}-${desde.getMonth()}-${desde.getDate()}`;
+        // tslint:disable-next-line:prefer-const
+        let Hastastr = `${desde.getFullYear()}-${desde.getMonth()}-${desde.getDate()}`;
+        console.log(Desdestr);
+        // const anio = fecha.getFullYear();
+
+        // tslint:disable-next-line:max-line-length
+        // tslint:disable-next-line:prefer-const
+        let url = `${this.urlMoviedb}discover/movie?primary_release_date.gte=${Desdestr}&primary_release_date.lte=${Hastastr}&api_key=${this.apikey}&language=es&callback=JSONP_CALLBACK`;
+
+        return this._jsp.get(url)
+                        .map( res => res.json().results );
+    }
     getPopulares() {
 
         const url = `${this.urlMoviedb}discover/movie?sort_by=popularity.desc&api_key=${this.apikey}&language=es&callback=JSONP_CALLBACK`;
 
         return this._jsp.get( url )
-                    .map( res => res.json());
+                    .map( res => res.json().results);
     }
 
     buscarPeliculas( texto: string) {

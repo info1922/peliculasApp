@@ -16,13 +16,19 @@ import { PeliculasService } from './services/peliculas.service';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomeComponent } from './components/home/home.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
+import { PeliculaComponent } from './components/pelicula/pelicula.component';
+
+// Pipes
+import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    BuscarComponent
+    BuscarComponent,
+    PeliculaComponent,
+    PeliculaImagenPipe
   ],
   imports: [
     HttpModule,

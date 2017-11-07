@@ -10,6 +10,10 @@ export class PeliculasService {
     private apikey = '570c9e02af999a0bb42d815a2498eb67';
     private urlMoviedb = 'https://api.themoviedb.org/3/';
 
+    // Almacenar peliculas buscadas
+    peliculas: any[] = [];
+
+
     constructor(private _jsp: Jsonp) { }
 
     // path de las imagenes
@@ -57,7 +61,11 @@ export class PeliculasService {
         const url = `${this.urlMoviedb}search/movie?query=${texto}&sort_by=popularity.desc&api_key=${this.apikey}&language=es&callback=JSONP_CALLBACK`;
 
         return this._jsp.get(url)
-                        .map(res => res.json());
+                        .map(res => {
+                            console.log(res.json().results);
+                            this.peliculas = res.json().results;
+                            return res.json().results;
+                        });
     }
 
 }

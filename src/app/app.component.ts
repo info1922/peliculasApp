@@ -12,7 +12,7 @@ export class AppComponent {
 
 
   constructor( private _ps: PeliculasService) {
-    this._ps.getPopulares().subscribe(data => console.log(data));
-    this._ps.buscarPeliculas('strange').subscribe( data => console.log(data));
+    // this._ps.getPopulares().subscribe(data => console.log(data));
+    // this._ps.buscarPeliculas('strange').subscribe( data => console.log(data));
   }
 }

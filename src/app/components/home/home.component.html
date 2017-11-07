@@ -5,12 +5,13 @@
     <h2>Cartelera</h2>
     <hr>
 
-    <div class="row">
+    <!-- Mosaicos con imagenes de las peliculas  -->
+    <div class="row" *ngIf="cartelera">
         <div class="col-sm-6">
 
             <div class="row">
 
-                <div class="col-md-12 div-pic-1" [ngStyle]="{'background-image': 'url(http://image.tmdb.org/t/p/w500/bfB1J6jsjdGWKjXxKQ5hNd1OyAs.jpg)'}">
+                <div class="col-md-12 div-pic-1" [ngStyle]="{'background-image': 'url('+ ( cartelera[0] | peliculaImagen ) +')'}">
 
                 </div>
 
@@ -18,10 +19,10 @@
 
             <div class="row">
 
-                <div class="col-sm-6 div-pic-2" [ngStyle]=" { 'background-image': 'url(http://image.tmdb.org/t/p/w500/bfB1J6jsjdGWKjXxKQ5hNd1OyAs.jpg)'}">
+                <div class="col-sm-6 div-pic-2" [ngStyle]="{'background-image': 'url('+ ( cartelera[1] | peliculaImagen ) +')'}">
 
                 </div>
-                <div class="col-sm-6 div-pic-2" [ngStyle]=" { 'background-image': 'url(http://image.tmdb.org/t/p/w500/bfB1J6jsjdGWKjXxKQ5hNd1OyAs.jpg)'}">
+                <div class="col-sm-6 div-pic-2" [ngStyle]="{'background-image': 'url('+ ( cartelera[2] | peliculaImagen ) +')'}">
 
                 </div>
 
@@ -33,10 +34,10 @@
 
             <div class="row">
 
-                <div class="col-sm-6 div-pic-2" [ngStyle]=" { 'background-image': 'url(http://image.tmdb.org/t/p/w500/bfB1J6jsjdGWKjXxKQ5hNd1OyAs.jpg)'}">
+                <div class="col-sm-6 div-pic-2" [ngStyle]="{'background-image': 'url('+ ( cartelera[3] | peliculaImagen ) +')'}">
 
                 </div>
-                <div class="col-sm-6 div-pic-2" [ngStyle]=" { 'background-image': 'url(http://image.tmdb.org/t/p/w500/bfB1J6jsjdGWKjXxKQ5hNd1OyAs.jpg)'}">
+                <div class="col-sm-6 div-pic-2" [ngStyle]="{'background-image': 'url('+ ( cartelera[4] | peliculaImagen ) +')'}">
 
                 </div>
 
@@ -44,7 +45,7 @@
 
             <div class="row">
 
-                <div class="col-md-12 div-pic-1" [ngStyle]="{'background-image': 'url(http://image.tmdb.org/t/p/w500/bfB1J6jsjdGWKjXxKQ5hNd1OyAs.jpg)'}">
+                <div class="col-md-12 div-pic-1" [ngStyle]="{'background-image': 'url('+ ( cartelera[5] | peliculaImagen ) +')'}">
 
                 </div>
 

@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     pelis: any[] = [];
     peli: any[] = [];
 
-    cartelera: any[] = [];
+    cartelera: any;
 
     constructor( public _ps: PeliculasService) {
 

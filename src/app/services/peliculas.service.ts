@@ -25,7 +25,6 @@ export class PeliculasService {
         // tslint:disable-next-line:prefer-const
         let Hastastr = `${desde.getFullYear()}-${desde.getMonth()}-${desde.getDate()}`;
         console.log(Desdestr);
-        // const anio = fecha.getFullYear();
 
         // tslint:disable-next-line:max-line-length
         // tslint:disable-next-line:prefer-const
@@ -34,12 +33,22 @@ export class PeliculasService {
         return this._jsp.get(url)
                         .map( res => res.json().results );
     }
+
     getPopulares() {
 
         const url = `${this.urlMoviedb}discover/movie?sort_by=popularity.desc&api_key=${this.apikey}&language=es&callback=JSONP_CALLBACK`;
 
         return this._jsp.get( url )
                     .map( res => res.json().results);
+    }
+
+    getPopularesKids() {
+
+        // tslint:disable-next-line:max-line-length
+        const url = `${this.urlMoviedb}discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${this.apikey}&language=es&callback=JSONP_CALLBACK`;
+
+        return this._jsp.get(url)
+            .map(res => res.json().results);
     }
 
     buscarPeliculas( texto: string) {

@@ -10,23 +10,28 @@ import { PeliculasService } from '../../services/peliculas.service';
 })
 export class HomeComponent implements OnInit {
 
-    pelis: any[] = [];
-    peli: any[] = [];
-
     cartelera: any;
+    populares: any;
+    popularesKids: any;
 
     constructor( public _ps: PeliculasService) {
 
         this._ps.getCartelera()
                 .subscribe( data => {
                     this.cartelera = data;
-                    console.log('Cartelera: ', this.cartelera);
-                });
+                   // console.log('Cartelera: ', this.cartelera);
+        });
 
         this._ps.getPopulares()
                 .subscribe(data => {
-                this.pelis = data;
+                this.populares = data;
         });
+
+        this._ps.getPopularesKids()
+            .subscribe(data => {
+                this.popularesKids = data;
+        });
+
     }
 
   ngOnInit() {

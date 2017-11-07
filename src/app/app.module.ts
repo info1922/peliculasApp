@@ -20,6 +20,7 @@ import { PeliculaComponent } from './components/pelicula/pelicula.component';
 
 // Pipes
 import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
+import { MosaicoComponent } from './components/home/mosaico.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
     HomeComponent,
     BuscarComponent,
     PeliculaComponent,
-    PeliculaImagenPipe
+    PeliculaImagenPipe,
+    MosaicoComponent
   ],
   imports: [
     HttpModule,

@@ -7,6 +7,7 @@ import { BuscarComponent } from './components/buscar/buscar.component';
 const ROUTES: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'buscar', component: BuscarComponent},
+    { path: 'buscar/:texto', component: BuscarComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

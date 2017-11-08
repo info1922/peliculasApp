@@ -68,4 +68,14 @@ export class PeliculasService {
                         });
     }
 
+
+    getPelicula( id: string) {
+
+        // tslint:disable-next-line:max-line-length
+        const url = `${this.urlMoviedb}movie/${id}?api_key=${this.apikey}&language=es&callback=JSONP_CALLBACK`;
+
+        return this._jsp.get(url)
+            .map(res => res.json());
+    }
+
 }
